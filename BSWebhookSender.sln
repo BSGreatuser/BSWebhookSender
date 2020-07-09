@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSWebhookSender", "BSWebhookSender\BSWebhookSender.csproj", "{36260F29-33D7-4355-AD11-5B8611BBC402}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36260F29-33D7-4355-AD11-5B8611BBC402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36260F29-33D7-4355-AD11-5B8611BBC402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36260F29-33D7-4355-AD11-5B8611BBC402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36260F29-33D7-4355-AD11-5B8611BBC402}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79C2AEDE-A8B7-4B00-84E5-352C6EA0BA18}
+	EndGlobalSection
+EndGlobal

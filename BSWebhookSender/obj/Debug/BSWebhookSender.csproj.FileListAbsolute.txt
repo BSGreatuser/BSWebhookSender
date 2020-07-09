@@ -1,0 +1,10 @@
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\bin\Debug\BSWebhookSender.exe.config
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\bin\Debug\BSWebhookSender.exe
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\bin\Debug\BSWebhookSender.pdb
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\obj\Debug\BSWebhookSender.csprojAssemblyReference.cache
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\obj\Debug\BSWebhookSender.Properties.Resources.resources
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\obj\Debug\BSWebhookSender.csproj.GenerateResource.cache
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\obj\Debug\BSWebhookSender.csproj.CoreCompileInputs.cache
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\obj\Debug\BSWebhookSender.exe
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\obj\Debug\BSWebhookSender.pdb
+C:\Users\SAMSUNG\source\repos\BSWebhookSender\BSWebhookSender\obj\Debug\BSWebhookSender.BSForm1.resources
