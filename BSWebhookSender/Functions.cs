@@ -45,8 +45,7 @@ namespace BSWebhookSender
                 });
             }
             catch
-            {
-            }
+            { }
         }
 
         public static string[] ReadFile(string path)

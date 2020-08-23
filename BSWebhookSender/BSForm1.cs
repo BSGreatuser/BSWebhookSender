@@ -4,11 +4,13 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using System.Drawing.Text;
+using System.Collections.Generic;
+using MetroFramework.Forms;
 
 //Fonts = Tmon몬소리, 나눔바른고딕
 namespace BSWebhookSender
 {
-    public partial class BSForm1 : Form
+    public partial class BSForm1 : MetroForm
     {
         public BSForm1()
         {
@@ -31,47 +33,6 @@ namespace BSWebhookSender
                 this.WebhookListbox.Items.Add(item);
             }
             this.WebhookTB.Clear();
-        }
-
-        //웹훅 불러오기 버튼
-        private void ComeonWebhookBTN_Click(object sender, EventArgs e) // 불러오기
-        {
-            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string fileName = this.openFileDialog1.FileName;
-                if (File.Exists(fileName))
-                {
-                    this.Urls.Clear();
-                    this.WebhookListbox.Items.Clear();
-                    foreach (string text in Functions.ReadFile(fileName))
-                    {
-                        this.Urls.Add(text.Trim());
-                    }
-                    foreach (string item in this.Urls)
-                    {
-                        this.WebhookListbox.Items.Add(item);
-                    }
-                }
-            }
-        }
-
-        //웹훅 저장 버튼
-        private void SaveBTN_Click(object sender, EventArgs e)
-        {
-            if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                if (this.Urls.Count == 0)
-                {
-                    MessageBox.Show("웹훅을 입력해주세요!");
-                    return;
-                }
-                string fileName = this.saveFileDialog1.FileName;
-                if (File.Exists(fileName))
-                {
-                    Functions.SaveFile(fileName, this.Urls);
-                }
-            }
-
         }
 
         //시간표시
@@ -184,6 +145,59 @@ namespace BSWebhookSender
         private void YoutubeBTN_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://youtube.com/c/봉순bs");
+        }
+        //==========================================================================//
+
+        //웹훅 리스트 저장
+        private void SaveBTN_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(dlg.FileName);
+
+                for (int i = 0; i < WebhookListbox.Items.Count; i++)
+                {
+                    writer.WriteLine((string)WebhookListbox.Items[i]);
+                }
+
+                writer.Close();
+            }
+
+            dlg.Dispose();
+        }
+
+        private void btnPath_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog op = new OpenFileDialog();
+                if(op.ShowDialog()==DialogResult.OK)
+                {
+                    txtPath.Text = op.FileName;
+                }
+            }
+            catch { }
+        }
+
+        private void LOADWebhookBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                try
+                {
+                    string[] lines = System.IO.File.ReadAllLines(txtPath.Text.Trim());
+
+                    foreach (string item in lines)
+                    {
+                        WebhookListbox.Items.Add(item);
+                        this.Urls.Add(item);
+                    }
+                }
+                catch { }
+            }
+            catch { }
         }
     }
 }
