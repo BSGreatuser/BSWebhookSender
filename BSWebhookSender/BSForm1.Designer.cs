@@ -60,6 +60,13 @@ namespace BSWebhookSender
             this.btnPath = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.info = new System.Windows.Forms.Label();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.timePath = new System.Windows.Forms.TextBox();
+            this.btntimePath = new System.Windows.Forms.Button();
+            this.savetimeBTN = new System.Windows.Forms.Button();
+            this.loadtimeBTN = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // WebhookListbox
@@ -68,10 +75,10 @@ namespace BSWebhookSender
             this.WebhookListbox.ForeColor = System.Drawing.Color.Black;
             this.WebhookListbox.FormattingEnabled = true;
             this.WebhookListbox.ItemHeight = 16;
-            this.WebhookListbox.Location = new System.Drawing.Point(14, 123);
+            this.WebhookListbox.Location = new System.Drawing.Point(15, 124);
             this.WebhookListbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.WebhookListbox.Name = "WebhookListbox";
-            this.WebhookListbox.Size = new System.Drawing.Size(339, 244);
+            this.WebhookListbox.Size = new System.Drawing.Size(318, 244);
             this.WebhookListbox.TabIndex = 1;
             // 
             // WebhookTB
@@ -79,11 +86,11 @@ namespace BSWebhookSender
             this.WebhookTB.BackColor = System.Drawing.SystemColors.Window;
             this.WebhookTB.Font = new System.Drawing.Font("함초롬돋움", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.WebhookTB.ForeColor = System.Drawing.Color.DarkGray;
-            this.WebhookTB.Location = new System.Drawing.Point(14, 375);
+            this.WebhookTB.Location = new System.Drawing.Point(15, 375);
             this.WebhookTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.WebhookTB.Multiline = true;
             this.WebhookTB.Name = "WebhookTB";
-            this.WebhookTB.Size = new System.Drawing.Size(339, 21);
+            this.WebhookTB.Size = new System.Drawing.Size(318, 21);
             this.WebhookTB.TabIndex = 2;
             this.WebhookTB.Text = "웹훅링크";
             this.WebhookTB.Enter += new System.EventHandler(this.WebhookTB_Enter);
@@ -91,10 +98,10 @@ namespace BSWebhookSender
             // SaveBTN
             // 
             this.SaveBTN.Font = new System.Drawing.Font("휴먼모음T", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.SaveBTN.Location = new System.Drawing.Point(360, 123);
+            this.SaveBTN.Location = new System.Drawing.Point(339, 124);
             this.SaveBTN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SaveBTN.Name = "SaveBTN";
-            this.SaveBTN.Size = new System.Drawing.Size(85, 122);
+            this.SaveBTN.Size = new System.Drawing.Size(76, 122);
             this.SaveBTN.TabIndex = 3;
             this.SaveBTN.Text = "저장";
             this.SaveBTN.UseVisualStyleBackColor = true;
@@ -104,7 +111,7 @@ namespace BSWebhookSender
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(12, 104);
+            this.label2.Location = new System.Drawing.Point(11, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 6;
@@ -117,10 +124,10 @@ namespace BSWebhookSender
             // LOADWebhookBTN
             // 
             this.LOADWebhookBTN.Font = new System.Drawing.Font("휴먼모음T", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.LOADWebhookBTN.Location = new System.Drawing.Point(360, 245);
+            this.LOADWebhookBTN.Location = new System.Drawing.Point(339, 245);
             this.LOADWebhookBTN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LOADWebhookBTN.Name = "LOADWebhookBTN";
-            this.LOADWebhookBTN.Size = new System.Drawing.Size(85, 122);
+            this.LOADWebhookBTN.Size = new System.Drawing.Size(76, 122);
             this.LOADWebhookBTN.TabIndex = 7;
             this.LOADWebhookBTN.Text = "불러오기";
             this.LOADWebhookBTN.UseVisualStyleBackColor = true;
@@ -129,10 +136,10 @@ namespace BSWebhookSender
             // PluusWebhookBTN
             // 
             this.PluusWebhookBTN.Font = new System.Drawing.Font("휴먼모음T", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.PluusWebhookBTN.Location = new System.Drawing.Point(359, 375);
+            this.PluusWebhookBTN.Location = new System.Drawing.Point(339, 375);
             this.PluusWebhookBTN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PluusWebhookBTN.Name = "PluusWebhookBTN";
-            this.PluusWebhookBTN.Size = new System.Drawing.Size(85, 21);
+            this.PluusWebhookBTN.Size = new System.Drawing.Size(76, 21);
             this.PluusWebhookBTN.TabIndex = 8;
             this.PluusWebhookBTN.Text = "추가";
             this.PluusWebhookBTN.UseVisualStyleBackColor = true;
@@ -153,31 +160,31 @@ namespace BSWebhookSender
             this.TimeListBox.ForeColor = System.Drawing.Color.Black;
             this.TimeListBox.FormattingEnabled = true;
             this.TimeListBox.ItemHeight = 16;
-            this.TimeListBox.Location = new System.Drawing.Point(485, 122);
+            this.TimeListBox.Location = new System.Drawing.Point(447, 124);
             this.TimeListBox.Name = "TimeListBox";
-            this.TimeListBox.Size = new System.Drawing.Size(213, 244);
+            this.TimeListBox.Size = new System.Drawing.Size(251, 244);
             this.TimeListBox.TabIndex = 9;
             // 
             // tbxTime
             // 
             this.tbxTime.Font = new System.Drawing.Font("함초롬돋움", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbxTime.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbxTime.Location = new System.Drawing.Point(485, 375);
+            this.tbxTime.Location = new System.Drawing.Point(447, 375);
             this.tbxTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbxTime.Multiline = true;
             this.tbxTime.Name = "tbxTime";
-            this.tbxTime.Size = new System.Drawing.Size(213, 21);
+            this.tbxTime.Size = new System.Drawing.Size(251, 21);
             this.tbxTime.TabIndex = 10;
             this.tbxTime.Text = "예) 오후 4:20:31";
             this.tbxTime.Enter += new System.EventHandler(this.tbxTime_Enter);
             // 
             // btnTime
             // 
-            this.btnTime.Font = new System.Drawing.Font("휴먼모음T", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnTime.Location = new System.Drawing.Point(704, 215);
+            this.btnTime.Font = new System.Drawing.Font("휴먼모음T", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnTime.Location = new System.Drawing.Point(704, 375);
             this.btnTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTime.Name = "btnTime";
-            this.btnTime.Size = new System.Drawing.Size(63, 90);
+            this.btnTime.Size = new System.Drawing.Size(74, 21);
             this.btnTime.TabIndex = 11;
             this.btnTime.Text = "추가";
             this.btnTime.UseVisualStyleBackColor = true;
@@ -187,7 +194,7 @@ namespace BSWebhookSender
             // 
             this.lbNt.AutoSize = true;
             this.lbNt.Font = new System.Drawing.Font("함초롬바탕 확장", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbNt.Location = new System.Drawing.Point(482, 104);
+            this.lbNt.Location = new System.Drawing.Point(444, 105);
             this.lbNt.Name = "lbNt";
             this.lbNt.Size = new System.Drawing.Size(40, 16);
             this.lbNt.TabIndex = 12;
@@ -231,10 +238,10 @@ namespace BSWebhookSender
             // RemoveTimeBTN
             // 
             this.RemoveTimeBTN.Font = new System.Drawing.Font("휴먼모음T", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.RemoveTimeBTN.Location = new System.Drawing.Point(704, 123);
+            this.RemoveTimeBTN.Location = new System.Drawing.Point(704, 289);
             this.RemoveTimeBTN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RemoveTimeBTN.Name = "RemoveTimeBTN";
-            this.RemoveTimeBTN.Size = new System.Drawing.Size(63, 90);
+            this.RemoveTimeBTN.Size = new System.Drawing.Size(74, 78);
             this.RemoveTimeBTN.TabIndex = 17;
             this.RemoveTimeBTN.Text = "선택\r\n삭제\r\n";
             this.RemoveTimeBTN.UseVisualStyleBackColor = true;
@@ -244,10 +251,10 @@ namespace BSWebhookSender
             // 
             this.ClearTimeBTN.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ClearTimeBTN.Font = new System.Drawing.Font("휴먼모음T", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ClearTimeBTN.Location = new System.Drawing.Point(704, 306);
+            this.ClearTimeBTN.Location = new System.Drawing.Point(704, 234);
             this.ClearTimeBTN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClearTimeBTN.Name = "ClearTimeBTN";
-            this.ClearTimeBTN.Size = new System.Drawing.Size(63, 90);
+            this.ClearTimeBTN.Size = new System.Drawing.Size(74, 47);
             this.ClearTimeBTN.TabIndex = 19;
             this.ClearTimeBTN.Text = "초기화";
             this.ClearTimeBTN.UseVisualStyleBackColor = true;
@@ -281,17 +288,17 @@ namespace BSWebhookSender
             // txtPath
             // 
             this.txtPath.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPath.Location = new System.Drawing.Point(14, 77);
+            this.txtPath.Location = new System.Drawing.Point(15, 78);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(339, 23);
+            this.txtPath.Size = new System.Drawing.Size(318, 23);
             this.txtPath.TabIndex = 22;
             // 
             // btnPath
             // 
             this.btnPath.Font = new System.Drawing.Font("휴먼모음T", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPath.Location = new System.Drawing.Point(359, 77);
+            this.btnPath.Location = new System.Drawing.Point(339, 78);
             this.btnPath.Name = "btnPath";
-            this.btnPath.Size = new System.Drawing.Size(85, 23);
+            this.btnPath.Size = new System.Drawing.Size(76, 23);
             this.btnPath.TabIndex = 23;
             this.btnPath.Text = "검색";
             this.btnPath.UseVisualStyleBackColor = true;
@@ -301,29 +308,91 @@ namespace BSWebhookSender
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(12, 59);
+            this.label1.Location = new System.Drawing.Point(11, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 15);
+            this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 24;
-            this.label1.Text = "불러오기 경로지정";
+            this.label1.Text = "웹훅 불러오기 경로지정";
             // 
             // info
             // 
             this.info.AutoSize = true;
-            this.info.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.info.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.info.BackColor = System.Drawing.Color.White;
+            this.info.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.info.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.info.Location = new System.Drawing.Point(497, 28);
+            this.info.Location = new System.Drawing.Point(216, 16);
             this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(250, 60);
+            this.info.Size = new System.Drawing.Size(199, 45);
             this.info.TabIndex = 26;
             this.info.Text = "* 저장 하실 때 .txt 꼭 붙혀주세요 !!\r\n* 웹훅 이름 꼭 지정해주세요 !!\r\n* https://discord.gg/sBUXRGc !!";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // timePath
+            // 
+            this.timePath.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.timePath.Location = new System.Drawing.Point(447, 77);
+            this.timePath.Name = "timePath";
+            this.timePath.Size = new System.Drawing.Size(251, 23);
+            this.timePath.TabIndex = 27;
+            // 
+            // btntimePath
+            // 
+            this.btntimePath.Font = new System.Drawing.Font("휴먼모음T", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btntimePath.Location = new System.Drawing.Point(704, 77);
+            this.btntimePath.Name = "btntimePath";
+            this.btntimePath.Size = new System.Drawing.Size(74, 23);
+            this.btntimePath.TabIndex = 28;
+            this.btntimePath.Text = "검색";
+            this.btntimePath.UseVisualStyleBackColor = true;
+            this.btntimePath.Click += new System.EventHandler(this.btntimePath_Click);
+            // 
+            // savetimeBTN
+            // 
+            this.savetimeBTN.Font = new System.Drawing.Font("휴먼모음T", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.savetimeBTN.Location = new System.Drawing.Point(704, 179);
+            this.savetimeBTN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.savetimeBTN.Name = "savetimeBTN";
+            this.savetimeBTN.Size = new System.Drawing.Size(74, 47);
+            this.savetimeBTN.TabIndex = 29;
+            this.savetimeBTN.Text = "저장";
+            this.savetimeBTN.UseVisualStyleBackColor = true;
+            this.savetimeBTN.Click += new System.EventHandler(this.savetimeBTN_Click);
+            // 
+            // loadtimeBTN
+            // 
+            this.loadtimeBTN.Font = new System.Drawing.Font("휴먼모음T", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.loadtimeBTN.Location = new System.Drawing.Point(704, 124);
+            this.loadtimeBTN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loadtimeBTN.Name = "loadtimeBTN";
+            this.loadtimeBTN.Size = new System.Drawing.Size(74, 47);
+            this.loadtimeBTN.TabIndex = 30;
+            this.loadtimeBTN.Text = "불러오기";
+            this.loadtimeBTN.UseVisualStyleBackColor = true;
+            this.loadtimeBTN.Click += new System.EventHandler(this.loadtimeBTN_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(444, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 15);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "시간 불러오기 경로지정";
             // 
             // BSForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 718);
+            this.ClientSize = new System.Drawing.Size(800, 718);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.loadtimeBTN);
+            this.Controls.Add(this.savetimeBTN);
+            this.Controls.Add(this.btntimePath);
+            this.Controls.Add(this.timePath);
             this.Controls.Add(this.info);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPath);
@@ -384,6 +453,13 @@ namespace BSWebhookSender
         private System.Windows.Forms.Button btnPath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label info;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.TextBox timePath;
+        private System.Windows.Forms.Button btntimePath;
+        private System.Windows.Forms.Button savetimeBTN;
+        private System.Windows.Forms.Button loadtimeBTN;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -96,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bs그림자00-removebg-preview.ico" />
-    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

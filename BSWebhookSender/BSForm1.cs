@@ -5,12 +5,13 @@ using System.IO;
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Collections.Generic;
-using MetroFramework.Forms;
 
-//Fonts = Tmon몬소리, 나눔바른고딕
+//using MetroFramework.Forms;
+//MetroForm
+
 namespace BSWebhookSender
 {
-    public partial class BSForm1 : MetroForm
+    public partial class BSForm1 : Form 
     {
         public BSForm1()
         {
@@ -168,6 +169,7 @@ namespace BSWebhookSender
             dlg.Dispose();
         }
 
+        //경로지정
         private void btnPath_Click(object sender, EventArgs e)
         {
             try
@@ -181,6 +183,7 @@ namespace BSWebhookSender
             catch { }
         }
 
+        //불러오기
         private void LOADWebhookBTN_Click(object sender, EventArgs e)
         {
             try
@@ -193,6 +196,56 @@ namespace BSWebhookSender
                     {
                         WebhookListbox.Items.Add(item);
                         this.Urls.Add(item);
+                    }
+                }
+                catch { }
+            }
+            catch { }
+        }
+
+        //시간저장
+        private void savetimeBTN_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg2 = new SaveFileDialog();
+
+            if (dlg2.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(dlg2.FileName);
+
+                for (int i = 0; i < TimeListBox.Items.Count; i++)
+                {
+                    writer.WriteLine((string)TimeListBox.Items[i]);
+                }
+
+                writer.Close();
+            }
+        }
+
+        private void btntimePath_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog op2 = new OpenFileDialog();
+                if (op2.ShowDialog() == DialogResult.OK)
+                {
+                    timePath.Text = op2.FileName;
+                }
+            }
+            catch { }
+        }
+
+        //시간불러오기
+        private void loadtimeBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                try
+                {
+                    string[] lines = System.IO.File.ReadAllLines(timePath.Text.Trim());
+
+                    foreach (string item in lines)
+                    {
+                        this.TimeListBox.Items.Add(item);
                     }
                 }
                 catch { }
